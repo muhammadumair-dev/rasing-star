@@ -1,0 +1,1378 @@
+/* ======================================= */
+/* 1. Base Setup (Responsive Root)         */
+/* ======================================= */
+:root {
+  --color-primary: #d97706;
+  /* Orange/Brown */
+  --color-secondary: #6d28d9;
+  /* Purple */
+  --color-dark: #161616;
+  --color-light: #fff;
+  --color-border: #000;
+  --color-primary-blue: #4da9e6;
+  /* Who We Are background, H2 in Mission */
+  --color-light-yellow: #f5f5cc;
+  /* Our Mission background */
+  --color-bright-yellow: #ffe600;
+  /* Who We Are H2 */
+  --color-text-dark: #333;
+  --color-text-dark: #2c3e50;
+  --color-footer-bg: #f5f5f5;
+  --color-text-white: white;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text-dark);
+  line-height: 1.7;
+}
+
+/* ======================================= */
+/* 2. Navbar Styles (Responsive REMs) - FIX APPLIED */
+/* ======================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  height: 5.625rem;
+  /* 90px -> 5.625rem (Desktop Height) */
+  background-color: var(--color-light);
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* Increased z-index for mobile menu overlay */
+}
+
+.logo-box {
+  /* Placeholder for background image */
+  background-image: url('./assets/logo.png');
+  /* Replace with your actual logo URL/path */
+  background-size: cover;
+  background-position: center;
+  width: 12.5rem;
+  height: 5.625rem;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  justify-content: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #b45309;
+}
+
+.nav-links .active {
+  color: var(--color-border);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--color-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+.cart-badge {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-secondary);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.125rem 0.25rem;
+  border-radius: 4px;
+  min-width: 0.9375rem;
+  text-align: center;
+}
+
+/* ======================================= */
+/* 11. MOBILE NAV IMPLEMENTATION (NEW CSS) */
+/* ======================================= */
+
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+  color: var(--color-secondary);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 4rem;
+  right: 0;
+  width: 70%;
+  max-width: 320px;
+  height: calc(100vh - 4rem);
+  background-color: var(--color-light);
+  padding: 2rem 1.5rem;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 99;
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: block;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-nav-links .active {
+  color: var(--color-secondary);
+}
+
+
+/* ======================================= */
+/* 3. Hero Section Styles                  */
+/* ======================================= */
+.hero {
+  /* Using a placeholder basketball stadium image */
+  background-image: url('https://images.unsplash.com/photo-1504450758481-7338eba7524a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 5.625rem);
+  /* Nav height ke mutabiq calc */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 6.25rem;
+}
+
+.content-box {
+  border: 0.25rem solid #ea580c;
+  padding: 2.5rem 3.75rem;
+  max-width: 90%;
+  width: 50rem;
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.content-box h1 {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.content-box p {
+  font-size: 1.1rem;
+  margin-bottom: 1.875rem;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background-color: white;
+  color: var(--color-secondary);
+  border: none;
+  padding: 0.75rem 2.5rem;
+  border-radius: 1.5625rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background-color: #f3f4f6;
+}
+
+/* ======================================= */
+/* 4. About Section Styles                 */
+/* ======================================= */
+.about-section {
+  padding: 5rem 2.5rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3.125rem;
+}
+
+.about-image-mask {
+  flex: 1;
+  aspect-ratio: 1 / 1.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.masked-text {
+  width: 100%;
+  height: 60%;
+  background-image: url('./assets/image.png');
+  /* Replace with your actual logo URL/path */
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+
+
+}
+
+
+
+.about-content {
+  flex: 1;
+  text-align: left;
+}
+
+.about-content h2 {
+  color: #ea580c;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5625rem;
+}
+
+.about-content p {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  text-align: justify;
+}
+
+/* ======================================= */
+/* 5. Sale Section Styles                  */
+/* ======================================= */
+.sale-section {
+  background-color: var(--color-dark);
+  padding: 7.5rem 1.25rem;
+  height: 18.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sale-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sale-subtitle {
+  color: #ea580c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+  letter-spacing: 1px;
+}
+
+.sale-title {
+  color: #ea580c;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 800;
+  margin: 0 0 2.5rem 0;
+}
+
+.sale-btn {
+  background-color: transparent;
+  border: 0.0625rem solid #ea580c;
+  color: white;
+  padding: 0.75rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sale-btn:hover {
+  background-color: #ea580c;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ======================================= */
+/* 6. Clients Section Styles               */
+/* ======================================= */
+.clients-section {
+  padding: 5rem 1.25rem;
+  background-color: white;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 3.125rem;
+  color: #111;
+  letter-spacing: 1px;
+}
+
+.clients-grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 12.5rem);
+  max-width: 75rem;
+  margin: 0 auto;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+}
+
+.client-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.box-border-right {
+  border-right: 1px solid var(--color-border);
+}
+
+.box-border-bottom {
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Logo styles */
+.logo-latch {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: #333;
+  font-family: sans-serif;
+}
+
+.logo-horizon {
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #555;
+  letter-spacing: 2px;
+}
+
+.logo-collective-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+}
+
+.logo-collective {
+  font-size: 0.8rem;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  color: #444;
+}
+
+.logo-pjk {
+  font-family: 'Times New Roman', serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  color: #333;
+}
+
+.logo-tiles-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-pan {
+  font-weight: 700;
+  color: #444;
+}
+
+.logo-mowerr-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo-mowerr {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #444;
+}
+
+/* ======================================= */
+/* 7. New Arrivals Section                 */
+/* ======================================= */
+.new-arrivals-section {
+  padding: 5rem 1.25rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.new-arrivals-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3.75rem;
+  color: #111;
+}
+
+.new-arrivals-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1.875rem;
+  max-width: 62.5rem;
+  margin: 0 auto;
+}
+
+.product-card {
+  flex: 0 0 45%;
+  max-width: 450px;
+}
+
+.product-image-container {
+  height: 21.875rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.product-image-container:hover .product-image {
+  transform: scale(1.03);
+}
+
+.quick-view-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 0.9375rem 0;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.product-image-container:hover .quick-view-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-name {
+  font-size: 1rem;
+  color: #333;
+  margin: 5px 0 2px 0;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+
+/* ======================================= */
+/* 8. Special Offers (Carousel) Section    */
+/* ======================================= */
+.special-offers-section {
+  padding: 5rem 5%;
+  background-color: #fff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.special-offers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-title-special-offers {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.shop-all-btn {
+  padding: 0.625rem 1.25rem;
+  background: none;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.shop-all-btn:hover {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.product-carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.product-carousel-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.product-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.product-offer-card {
+  flex: 0 0 auto;
+  width: 15.625rem;
+  scroll-snap-align: start;
+  text-align: left;
+  background-color: #fff;
+}
+
+.product-image-box {
+  position: relative;
+  width: 100%;
+  height: 18.75rem;
+  background-color: #f7f7f7;
+  margin-bottom: 0.625rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-offer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder BG Classes */
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-lavender {
+  background-color: #e6e6fa;
+}
+
+.bg-orange-serum {
+  background-color: #f7f7f7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='6' y='5' width='12' height='14' rx='2' ry='2' fill='%23ff9966'/%3E%3Crect x='9' y='10' width='6' height='7' fill='white'/%3E%3Ccircle cx='12' cy='4' r='1' fill='white'/%3E%3Cline x1='12' y1='4' x2='12' y2='5' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-green-sweater {
+  background-color: #f7f7f7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='5' y='5' width='14' height='14' rx='2' ry='2' fill='%234caf50'/%3E%3C/svg%3E");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-white-glasses {
+  background-color: #f7f7f7;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='12' r='3'%3E%3C/circle%3E%3Ccircle cx='17' cy='12' r='3'%3E%3C/circle%3E%3Cline x1='10' y1='12' x2='14' y2='12'%3E%3C/line%3E%3Cline x1='19' y1='12' x2='21' y2='12'%3E%3C/line%3E%3Cline x1='3' y1='12' x2='5' y2='12'%3E%3C/line%3E%3C/svg%3E");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-extra {
+  background-color: #eeeeee;
+}
+
+.product-badge {
+  position: absolute;
+  top: 0.9375rem;
+  left: 0;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  z-index: 10;
+}
+
+.best-seller-badge {
+  background-color: #6a1b9a;
+}
+
+.new-badge {
+  background-color: #7b1fa2;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  padding: 0.75rem 0;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: opacity 0.3s;
+}
+
+.purple-btn {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.purple-btn:hover {
+  background-color: #5d168a;
+}
+
+.pre-order-btn {
+  background-color: transparent;
+  border: 1px solid #6a1b9a;
+  color: #6a1b9a;
+}
+
+.pre-order-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-arrow {
+  left: -1.25rem;
+}
+
+.right-arrow {
+  right: -1.25rem;
+}
+
+/* ======================================= */
+/* 9. Contact Form Section Styles          */
+/* ======================================= */
+
+.contact-form-section {
+  padding: 3.125rem 1.25rem;
+}
+
+.contact-form-container {
+  max-width: 37.5rem;
+  margin: 0 auto;
+  padding: 1.25rem 0;
+}
+
+.contact-form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-group label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contact-form-name-row {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.contact-form-name-row .contact-form-group {
+  flex: 1;
+}
+
+.contact-form-input-field {
+  padding: 0.625rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form-textarea-field {
+  resize: vertical;
+}
+
+.contact-form-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.625rem;
+}
+
+.contact-form-submit-button {
+  background-color: #6633ff;
+  color: white;
+  padding: 0.625rem 1.875rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.contact-form-submit-button:hover {
+  background-color: #5522ee;
+}
+
+
+/* ======================================= */
+/* 10. Media Queries (Responsive)          */
+/* ======================================= */
+
+/* Tablet & Smaller Desktop (Max 1000px) */
+@media (max-width: 62.5rem) {
+
+  /* General */
+  .navbar {
+    padding: 0 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  /* About Section Stacking */
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    text-align: left;
+  }
+
+  /* Clients Grid to 2 Columns */
+  .clients-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    max-width: 40rem;
+    border: none;
+  }
+
+  .client-box {
+    height: 9.375rem;
+    border: 1px solid #ddd;
+    margin-bottom: 0.625rem;
+  }
+
+  .box-border-right,
+  .box-border-bottom {
+    border: none;
+  }
+
+  .client-box:nth-child(odd) {
+    border-right: 1px solid #ddd;
+  }
+
+  /* New Arrivals Stack */
+  .new-arrivals-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Mobile (Max 768px) */
+@media (max-width: 48rem) {
+
+  /* === NAVBAR FIX (Show Hamburger, Hide Desktop Links) === */
+  .navbar {
+    height: 4rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-box {
+    width: 8rem;
+    height: 3rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .hero {
+    height: calc(100vh - 4rem);
+  }
+
+  /* ================== */
+
+  .hero-overlay {
+    padding-bottom: 2rem;
+  }
+
+  .content-box {
+    padding: 1.5rem;
+  }
+
+  .content-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .sale-title {
+    font-size: 2.5rem;
+  }
+
+  /* Clients Grid to 1 Column */
+  .clients-grid-container {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .client-box:nth-child(odd) {
+    border-right: none;
+  }
+
+  /* Carousel Arrows Hide */
+  .carousel-arrow {
+    display: none;
+  }
+
+  /* Contact Form Stacking & Center Button */
+  .contact-form-name-row {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .contact-form-button-container {
+    justify-content: center;
+  }
+}
+
+.hero-section {
+  /* Simulating the image with a gradient and a dark shape */
+  background-color: #65b3e6;
+  background-image:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%),
+    linear-gradient(135deg, #a7d0ed 0%, #4da9e6 100%);
+  /* Simulates the sky/building colors */
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  /* Align to the bottom like the image */
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section h1 {
+  color: var(--color-text-white);
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  padding: 10px 30px;
+  background-color: var(--color-primary-blue);
+  line-height: 1.2;
+}
+
+/* Content Wrapper for internal sections */
+.content-container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+/* Section Specific Styling */
+section {
+  padding: 50px 0;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Who We Are Section */
+.who-we-are {
+  background-color: var(--color-primary-blue);
+}
+
+.who-we-are h2 {
+  color: var(--color-bright-yellow);
+}
+
+.who-we-are p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: black;
+}
+
+/* Our Mission Section */
+.our-mission {
+  background-color: var(--color-light-yellow);
+}
+
+.our-mission h2 {
+  color: var(--color-primary-blue);
+}
+
+.our-mission p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: 20px;
+}
+
+/* Content Section Styling */
+.product-feature-section {
+  padding: 80px 30px;
+  /* Top and bottom padding for the main content area */
+  text-align: center;
+  /* Center the entire content block */
+}
+
+.content-container {
+  max-width: 850px;
+  /* A width that resembles the content width in the image */
+  margin: 0 auto;
+}
+
+/* Heading Style */
+.product-feature-section h2 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: black;
+  /* Ensuring a very dark/black color as in the image */
+  text-align: left;
+  /* Heading is left-aligned in the image's context */
+}
+
+/* Paragraph Style */
+.product-feature-section p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  margin-bottom: 50px;
+  text-align: left;
+  /* Paragraph is left-aligned */
+}
+
+/* Image Container and Styling */
+.image-container {
+  margin-top: 40px;
+  text-align: center;
+  /* Ensures the image itself is centered */
+}
+
+.product-image {
+  max-width: 100%;
+  /* Ensures image is responsive and scales down */
+  height: auto;
+  /* In the original image, the light fixture is white/transparent background. 
+               If you had the actual image, you'd link it here. */
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--color-footer-bg);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer p {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+/* Unique Color Variables */
+:root {
+    /* Header Background: Dark Blue Gradient */
+    --color-primary-dark-blue: #1A376B; 
+    --color-secondary-blue: #4A83C8;
+    
+    /* Main Titles: Yellowish-Green from Image */
+    --color-unique-accent-1: #EAE657; 
+
+    /* Button/Separator Border: Light Blue */
+    --color-unique-accent-2: #80C8F5; 
+
+    /* Body Text Color: Dark Gray */
+    --color-text-dark: #333333; 
+
+    /* GoFundMe Green */
+    --color-gofundme-green: #3B9959; 
+
+    /* Footer Text Color: Black */
+    --color-footer-text: #000000;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* Use a common font */
+}
+
+body {
+    background-color: #ffffff;
+}
+
+/* Header Styling (unique-gradient-bg) */
+.page-header {
+    background: linear-gradient(180deg, var(--color-secondary-blue) 0%, var(--color-primary-dark-blue) 100%);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 3em;
+    font-weight: 700;
+    color: white; /* unique-header-text-color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content Layout */
+.main-content-area {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Styling */
+.program-feature-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* Reverse layout for GoFundMe section (Optional: to match visual flow) */
+.gofundme-campaign-section {
+    flex-direction: row-reverse;
+}
+
+.feature-text-block {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.feature-visual-mockups {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px; /* Ensure some height for visuals */
+    position: relative;
+    padding-left: 40px;
+}
+
+/* Text & Headings */
+.program-section-heading {
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: var(--color-unique-accent-1); /* unique-accent-color-1 */
+}
+
+.program-description-text {
+    font-size: 1.05em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--color-text-dark); /* unique-body-text-color */
+}
+
+/* Call-to-Action Button (unique-button-style-1) */
+.action-button {
+    background: none;
+    border: 2px solid var(--color-unique-accent-2); 
+    color: var(--color-unique-accent-2);
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 15px;
+}
+
+.action-button:hover {
+    background-color: var(--color-unique-accent-2);
+    color: white;
+}
+
+/* --- Visual Mockups Styling --- */
+
+/* Detection Mockups */
+.detection-visual-mockups {
+    background-color: var(--color-primary-dark-blue);
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    min-height: 500px;
+    padding: 50px;
+}
+
+.mockup-screen {
+    position: absolute;
+    width: 40%;
+    height: 300px;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    text-align: center;
+    transform: rotate(0deg);
+}
+
+/* Positioning screens to mimic the overlapping look */
+.screen-1 { top: 50px; left: 10%; z-index: 1; transform: rotate(-5deg); }
+.screen-2 { top: 100px; left: 35%; z-index: 3; transform: rotate(0deg); width: 45%; height: 350px; border-color: var(--color-unique-accent-1); }
+.screen-3 { top: 70px; right: 5%; z-index: 2; transform: rotate(5deg); }
+.screen-4 { bottom: 50px; right: 20%; z-index: 4; transform: rotate(-3deg); background-color: #2c2c2c; }
+
+
+/* GoFundMe Logo Styling */
+.gofundme-logo-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gofundme-logo {
+    display: flex;
+    align-items: flex-end;
+    font-size: 8em; /* Large size for effect */
+    font-weight: 900;
+    text-transform: lowercase;
+    color: var(--color-gofundme-green); /* unique-gofundme-color-bg */
+}
+
+.logo-sun {
+    position: relative;
+    width: 0.6em; 
+    height: 0.6em;
+    background-color: transparent;
+    border-radius: 50%;
+    margin-right: -0.05em; /* Overlap slightly */
+}
+
+/* Simulating the GoFundMe logo's sun rays/hand shape */
+.logo-sun::before, .logo-sun::after,
+.logo-sun .logo-text {
+    color: var(--color-gofundme-green);
+    position: absolute;
+}
+
+.logo-sun::before {
+    content: '';
+    position: absolute;
+    top: -0.2em; left: 0.15em;
+    width: 0.25em; height: 0.7em;
+    background-color: var(--color-gofundme-green);
+    border-radius: 0.2em;
+    transform: rotate(30deg);
+}
+
+.logo-sun::after {
+    content: '';
+    position: absolute;
+    top: 0.2em; left: -0.1em;
+    width: 0.25em; height: 0.7em;
+    background-color: var(--color-gofundme-green);
+    border-radius: 0.2em;
+    transform: rotate(-30deg);
+}
+
+
+.logo-text {
+    font-size: 1em;
+    line-height: 0.8;
+}
+
+/* Separator Bar (for visual break between sections as implied by the image) */
+.footer-blue-bar {
+    width: 100%;
+    height: 40px;
+    background-color: var(--color-unique-accent-2); /* unique-accent-bar-color */
+    margin-top: 50px;
+}
+
+/* Footer (unique-footer-bg-color) */
+.page-footer {
+    width: 100%;
+}
+
+.footer-content {
+    background-color: #f7f7f7; /* Light grey/white background */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-org-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-footer-text); /* unique-footer-text-color */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 900px) {
+    .program-feature-section {
+        flex-direction: column;
+        padding: 40px 0;
+    }
+
+    .gofundme-campaign-section {
+        flex-direction: column; /* Reset for mobile */
+    }
+
+    .feature-text-block {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .feature-visual-mockups {
+        width: 100%;
+        padding-left: 0;
+        min-height: 350px;
+    }
+
+    .mockup-screen {
+        width: 60%;
+        height: 250px;
+    }
+
+    .screen-1 { top: 30px; left: 5%; }
+    .screen-2 { top: 80px; left: 25%; width: 55%; height: 300px;}
+    .screen-3 { top: 50px; right: 10%; }
+    .screen-4 { bottom: 20px; right: 5%; }
+}
