@@ -1,4 +1,4 @@
-/* ======================================= */
+l/* ======================================= */
 /* 1. Base Setup (Responsive Root)         */
 /* ======================================= */
 :root {
@@ -1518,5 +1518,202 @@ body {
     .newsletter-form {
         max-width: 400px;
         margin: 1rem auto 0;
+    }
+}
+/* =========================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================= */
+
+/* --- 1. TABLET VIEW (Max-width: 1024px) --- */
+@media screen and (max-width: 1024px) {
+    
+    html {
+        font-size: 15px; /* Thoda text size adjust kiya */
+    }
+
+    /* Navbar Spacing */
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    /* Grid Layouts for Tablet (2 Columns) */
+    .new-arrivals-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row */
+        gap: 1.5rem;
+    }
+
+    /* About Section stacking */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content {
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+
+    /* Clients Grid Adjustment */
+    .clients-grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 logos per row */
+    }
+    
+    .client-box {
+        border-right: none !important; /* Borders hata diye clean look ke liye */
+        border: 1px solid #eee;
+    }
+}
+
+/* --- 2. MOBILE VIEW (Max-width: 768px) --- */
+@media screen and (max-width: 768px) {
+
+    /* --- General Reset for Mobile --- */
+    html {
+        font-size: 14px;
+    }
+    
+    section {
+        padding: 3rem 1.5rem; /* Padding kam ki taaki space bache */
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* --- Header & Mobile Menu --- */
+    .nav-links {
+        display: none; /* Desktop menu chupana */
+    }
+
+    .hamburger-btn {
+        display: block; /* Hamburger icon dikhana */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    /* Slide-in Mobile Menu Styling */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        padding: 2rem;
+        z-index: 1000;
+        transform: translateX(100%); /* Default hidden (Right side) */
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Javascript se jab 'active' class add hogi tab menu dikhega */
+    .mobile-menu.active {
+        transform: translateX(0);
+    }
+
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .mobile-nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .mobile-nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    /* --- Hero Section --- */
+    .content-box {
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    /* --- About Section --- */
+    .about-image-mask {
+        width: 100%;
+        height: 300px; /* Image height fix */
+    }
+
+    /* --- Sale Section --- */
+    .sale-section {
+        padding: 4rem 1rem;
+    }
+    
+    .sale-title {
+        font-size: 2.5rem;
+    }
+
+    /* --- Clients/Brands --- */
+    .clients-grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 logos per row */
+    }
+
+    /* --- New Arrivals --- */
+    .new-arrivals-grid {
+        grid-template-columns: 1fr; /* 1 Product per row (full width) */
+    }
+
+    /* --- Special Offers (Carousel) --- */
+    .product-carousel-track {
+        gap: 1rem;
+    }
+    
+    .product-offer-card {
+        min-width: 260px; /* Card ki width thodi kam ki mobile ke liye */
+    }
+    
+    .carousel-arrow {
+        width: 2.5rem;
+        height: 2.5rem;
+        background: rgba(255,255,255,0.9); /* Arrows ko thoda visible banaya */
+    }
+
+    /* --- Contact Form --- */
+    .contact-form-container {
+        padding: 1.5rem;
+    }
+
+    .contact-form-name-row {
+        flex-direction: column; /* First/Last name ek ke neeche ek */
+        gap: 1rem;
+    }
+
+    /* --- Footer Adjustments (from previous code) --- */
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-form input {
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+    
+    .newsletter-form button {
+        border-radius: 4px;
+        width: 100%;
+        padding: 0.8rem;
     }
 }
