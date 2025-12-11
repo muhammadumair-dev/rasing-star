@@ -19,6 +19,24 @@ l/* ======================================= */
   --color-text-dark: #2c3e50;
   --color-footer-bg: #f5f5f5;
   --color-text-white: white;
+      /* Header Background: Dark Blue Gradient */
+    --color-primary-dark-blue: #1A376B; 
+    --color-secondary-blue: #4A83C8;
+    
+    /* Main Titles: Yellowish-Green from Image */
+    --color-unique-accent-1: #EAE657; 
+
+    /* Button/Separator Border: Light Blue */
+    --color-unique-accent-2: #80C8F5; 
+
+    /* Body Text Color: Dark Gray */
+    --color-text-dark: #333333; 
+
+    /* GoFundMe Green */
+    --color-gofundme-green: #3B9959; 
+
+    /* Footer Text Color: Black */
+    --color-footer-text: #000000;
 
 }
 
@@ -45,7 +63,8 @@ body {
   padding: 0 2.5rem;
   height: 5.625rem;
   /* 90px -> 5.625rem (Desktop Height) */
-  background-color: var(--color-light);
+  background-color: white;
+
   box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
@@ -237,7 +256,7 @@ body {
 
 .cta-button {
   background-color: white;
-  color: var(--color-secondary);
+  color: blue;
   border: none;
   padding: 0.75rem 2.5rem;
   border-radius: 1.5625rem;
@@ -314,7 +333,7 @@ body {
 /* 5. Sale Section Styles                  */
 /* ======================================= */
 .sale-section {
-  background-color: var(--color-dark);
+  background-color: #181818;
   padding: 7.5rem 1.25rem;
   height: 18.75rem;
   display: flex;
@@ -366,7 +385,7 @@ body {
 /* ======================================= */
 .clients-section {
   padding: 5rem 1.25rem;
-  background-color: white;
+
   text-align: center;
 }
 
@@ -385,24 +404,24 @@ body {
   grid-template-rows: repeat(2, 12.5rem);
   max-width: 75rem;
   margin: 0 auto;
-  border-left: 1px solid var(--color-border);
-  border-right: 1px solid var(--color-border);
+  border-left: 1px solid black;
+  border-right: 1px solid  black;
 }
 
 .client-box {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+
   transition: background-color 0.3s ease;
 }
 
 .box-border-right {
-  border-right: 1px solid var(--color-border);
+  border-right: 1px solid black;
 }
 
 .box-border-bottom {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid black;
 }
 
 /* Logo styles */
@@ -805,7 +824,7 @@ body {
 
 .contact-form-input-field {
   padding: 0.625rem;
-  border: 1px solid var(--color-border);
+
   border-radius: 0;
   font-size: 1rem;
   width: 100%;
@@ -1108,41 +1127,7 @@ footer p {
   color: black;
   margin: 0;
 }
-/* Unique Color Variables */
-:root {
-    /* Header Background: Dark Blue Gradient */
-    --color-primary-dark-blue: #1A376B; 
-    --color-secondary-blue: #4A83C8;
-    
-    /* Main Titles: Yellowish-Green from Image */
-    --color-unique-accent-1: #EAE657; 
 
-    /* Button/Separator Border: Light Blue */
-    --color-unique-accent-2: #80C8F5; 
-
-    /* Body Text Color: Dark Gray */
-    --color-text-dark: #333333; 
-
-    /* GoFundMe Green */
-    --color-gofundme-green: #3B9959; 
-
-    /* Footer Text Color: Black */
-    --color-footer-text: #000000;
-}
-
-/* Base Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif; /* Use a common font */
-}
-
-body {
-    background-color: #ffffff;
-}
-
-/* Header Styling (unique-gradient-bg) */
 .page-header {
     background: linear-gradient(180deg, var(--color-secondary-blue) 0%, var(--color-primary-dark-blue) 100%);
     padding: 80px 20px;
@@ -1380,7 +1365,7 @@ body {
    9. FOOTER STYLES
    ==================== */
 .site-footer {
-    background-color: #1a1a1a; /* Dark background */
+    background-color: rgb(123, 193, 250); /* Dark background */
     color: #e0e0e0; /* Light text */
     padding: 4rem 2rem 1rem;
     font-family: inherit;
@@ -1408,7 +1393,7 @@ body {
     font-size: 0.9rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
-    color: #aaa;
+    
     max-width: 300px;
 }
 
@@ -1432,7 +1417,7 @@ body {
 
 .footer-links a {
     text-decoration: none;
-    color: #aaa;
+
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
@@ -1497,52 +1482,35 @@ body {
     color: #777;
 }
 
-/* ====================
-   RESPONSIVE (MOBILE)
-   ==================== */
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr; /* Mobile par sab ek ke neeche ek */
-        gap: 3rem;
-        text-align: center;
-    }
+/*
+ * =========================================
+ * RESPONSIVE DESIGN
+ * (Using a Desktop-First approach with max-width)
+ * =========================================
+ */
 
-    .footer-desc {
-        margin: 0 auto 1.5rem; /* Center align description */
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-
-    .newsletter-form {
-        max-width: 400px;
-        margin: 1rem auto 0;
-    }
-}
-/* =========================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
-   ========================================= */
-
-/* --- 1. TABLET VIEW (Max-width: 1024px) --- */
+/* -------------------------------------------
+   1. TABLET VIEW (Max-width: 1024px) 
+   ------------------------------------------- */
 @media screen and (max-width: 1024px) {
     
+    /* Base Scaling */
     html {
-        font-size: 15px; /* Thoda text size adjust kiya */
+        font-size: 15px;
     }
 
-    /* Navbar Spacing */
+    /* Layout Adjustments */
     .navbar {
         padding: 1rem 2rem;
     }
 
-    /* Grid Layouts for Tablet (2 Columns) */
+    /* Grid Layouts (2 Columns) */
     .new-arrivals-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 products per row */
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
 
-    /* About Section stacking */
+    /* About Section Stacking */
     .about-container {
         flex-direction: column;
         text-align: center;
@@ -1555,37 +1523,41 @@ body {
 
     /* Clients Grid Adjustment */
     .clients-grid-container {
-        grid-template-columns: repeat(3, 1fr); /* 3 logos per row */
+        grid-template-columns: repeat(3, 1fr);
     }
     
     .client-box {
-        border-right: none !important; /* Borders hata diye clean look ke liye */
+        /* Removing border-right to clean up the 3-column layout border */
+        border-right: none !important;
         border: 1px solid #eee;
     }
 }
 
-/* --- 2. MOBILE VIEW (Max-width: 768px) --- */
+/* -------------------------------------------
+   2. MOBILE VIEW (Max-width: 768px) 
+   ------------------------------------------- */
 @media screen and (max-width: 768px) {
 
-    /* --- General Reset for Mobile --- */
+    /* --- General Resets & Scaling --- */
     html {
         font-size: 14px;
     }
     
+    /* Reduced vertical space in sections for better mobile scrolling */
     section {
-        padding: 3rem 1.5rem; /* Padding kam ki taaki space bache */
+        padding: 2rem 1.5rem; 
     }
 
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
 
-    /* --- Header & Mobile Menu --- */
+    /* --- Header & Mobile Menu Setup --- */
     .nav-links {
-        display: none; /* Desktop menu chupana */
+        display: none; /* Hide desktop menu */
     }
 
     .hamburger-btn {
-        display: block; /* Hamburger icon dikhana */
+        display: block; /* Show hamburger icon */
         background: none;
         border: none;
         cursor: pointer;
@@ -1604,16 +1576,15 @@ body {
         box-shadow: -2px 0 10px rgba(0,0,0,0.1);
         padding: 2rem;
         z-index: 1000;
-        transform: translateX(100%); /* Default hidden (Right side) */
+        transform: translateX(100%); /* Hidden by default */
         transition: transform 0.3s ease-in-out;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    /* Javascript se jab 'active' class add hogi tab menu dikhega */
     .mobile-menu.active {
-        transform: translateX(0);
+        transform: translateX(0); /* Visible state (controlled by JS) */
     }
 
     .mobile-nav-links {
@@ -1621,9 +1592,10 @@ body {
         padding: 0;
         text-align: center;
     }
-
+    
+    /* Reduced margin for menu items to save height */
     .mobile-nav-links li {
-        margin: 1.5rem 0;
+        margin: 1rem 0; 
     }
 
     .mobile-nav-links a {
@@ -1647,12 +1619,12 @@ body {
     /* --- About Section --- */
     .about-image-mask {
         width: 100%;
-        height: 300px; /* Image height fix */
+        height: 300px;
     }
 
     /* --- Sale Section --- */
     .sale-section {
-        padding: 4rem 1rem;
+        padding: 3rem 1rem; /* Reduced padding */
     }
     
     .sale-title {
@@ -1666,7 +1638,7 @@ body {
 
     /* --- New Arrivals --- */
     .new-arrivals-grid {
-        grid-template-columns: 1fr; /* 1 Product per row (full width) */
+        grid-template-columns: 1fr; /* 1 Product per row */
     }
 
     /* --- Special Offers (Carousel) --- */
@@ -1675,13 +1647,13 @@ body {
     }
     
     .product-offer-card {
-        min-width: 260px; /* Card ki width thodi kam ki mobile ke liye */
+        min-width: 260px; 
     }
     
     .carousel-arrow {
         width: 2.5rem;
         height: 2.5rem;
-        background: rgba(255,255,255,0.9); /* Arrows ko thoda visible banaya */
+        background: rgba(255,255,255,0.9); 
     }
 
     /* --- Contact Form --- */
@@ -1690,19 +1662,30 @@ body {
     }
 
     .contact-form-name-row {
-        flex-direction: column; /* First/Last name ek ke neeche ek */
+        flex-direction: column; /* Stack name inputs */
         gap: 1rem;
     }
 
-    /* --- Footer Adjustments (from previous code) --- */
+    /* --- Footer Adjustments --- */
     .footer-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack columns */
         text-align: center;
-        gap: 2.5rem;
+        /* Significantly reduced vertical gap */
+        gap: 1.5rem; 
+    }
+
+    .footer-desc {
+        margin: 0 auto 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
     }
     
     .newsletter-form {
         flex-direction: column;
+        max-width: 400px;
+        margin: 1rem auto 0;
     }
     
     .newsletter-form input {
