@@ -74,7 +74,7 @@ body {
 
 .logo-box{
   width: auto;
-  height: 5.625rem;
+  height: 100%;
   display: flex;
   align-items: center;
   padding: 0;
@@ -411,22 +411,6 @@ body {
   padding-left: 0; 
 }
 
-@media (min-width: 992px) {
-  .navbar{
-    padding-left: 0; /* remove left pad so logo can sit at edge */
-    padding-right: 2.5rem;
-  }
-  .nav-links{
-    position: absolute; 
-    left: 50%; 
-    transform: translateX(-50%);
-    z-index: 102;
-  }
-  .logo-img{
-    height: 64px; /* keep same fixed height on desktop */
-    width: auto;
-  }
-}
 
 /* Show hamburger and hide desktop nav on small screens */
 @media (max-width: 991px) {
@@ -901,14 +885,7 @@ body {
 /* Tablet & Smaller Desktop (Max 1000px) */
 @media (max-width: 62.5rem) {
 
-  /* General */
-  .navbar {
-    padding: 0 1.25rem;
-  }
-
-  .nav-links {
-    gap: 1.5rem;
-  }
+  
 
   /* About Section Stacking */
   .about-container {
@@ -959,18 +936,7 @@ body {
 @media (max-width: 48rem) {
 
   /* === NAVBAR FIX (Show Hamburger, Hide Desktop Links) === */
-  .navbar {
-    height: 4rem;
-    padding: 0.5rem 1rem;
-  }
-
-  .logo-box {
-    width: 8rem;
-    height: 3rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-
+  
   .nav-links {
     display: none;
   }
@@ -1536,9 +1502,7 @@ footer p {
     }
 
     /* Layout Adjustments */
-    .navbar {
-        padding: 1rem 2rem;
-    }
+    
 
     /* Grid Layouts (2 Columns) */
     .new-arrivals-grid {
