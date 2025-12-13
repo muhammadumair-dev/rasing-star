@@ -68,7 +68,6 @@ body {
   z-index: 10;
 }
 
-<<<<<<< HEAD
 /* Logo Styling */
 .logo-box {
 
@@ -81,15 +80,6 @@ body {
 .logo-box img{
   height: 100%;
   width: 100%;
-=======
-.logo-box{
-  width: auto;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  overflow: hidden;
->>>>>>> 5d32c87e547a642455fba5a66b5dc072fd5b05bd
 }
 
 .logo-text {
@@ -423,7 +413,6 @@ body {
   padding-left: 0; 
 }
 
-<<<<<<< HEAD
 @media (min-width: 992px) {
   .navbar{
     padding-left: 0; /* remove left pad so logo can sit at edge */
@@ -438,8 +427,6 @@ body {
   }
 
 }
-=======
->>>>>>> 5d32c87e547a642455fba5a66b5dc072fd5b05bd
 
 /* Show hamburger and hide desktop nav on small screens */
 @media (max-width: 991px) {
@@ -965,7 +952,6 @@ body {
 @media (max-width: 48rem) {
 
   /* === NAVBAR FIX (Show Hamburger, Hide Desktop Links) === */
-<<<<<<< HEAD
   .navbar {
     height: 4rem;
     padding: 0px;
@@ -978,9 +964,6 @@ body {
     background-repeat: no-repeat;
   }
 
-=======
-  
->>>>>>> 5d32c87e547a642455fba5a66b5dc072fd5b05bd
   .nav-links {
     display: none;
   }
@@ -1546,11 +1529,7 @@ footer p {
     }
 
     /* Layout Adjustments */
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 5d32c87e547a642455fba5a66b5dc072fd5b05bd
 
     /* Grid Layouts (2 Columns) */
     .new-arrivals-grid {
