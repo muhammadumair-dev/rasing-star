@@ -64,17 +64,18 @@ body {
   height: 90px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  position: relative;
+  position:fixed;
+  width: 100%;
   z-index: 10;
 }
 
 /* Logo Styling */
 .logo-box {
 
- 
 
   width:200px;
   height: 90px;
+  margin-left: 0px;
 
 }
 .logo-box img{
@@ -409,7 +410,7 @@ body {
 
 /* Header / Navigation: make logo flush left on larger screens while keeping nav centered */
 .logo-box{ 
-  margin-left: 0; 
+  margin-left: 20px; 
   padding-left: 0; 
 }
 
