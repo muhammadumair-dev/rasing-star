@@ -1407,7 +1407,7 @@ footer p {
    9. FOOTER STYLES
    ==================== */
 .site-footer {
-    background-color: #c3f4f5; /* Dark background */
+    background-color: rgb(175, 133, 214); /* Dark background */
     color: #7620ff; /* Light text */
     padding: 4rem 2rem 1rem;
 
