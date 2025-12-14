@@ -1407,8 +1407,8 @@ footer p {
    9. FOOTER STYLES
    ==================== */
 .site-footer {
-    background-color: #d3e7e7; /* Dark background */
-    color: #141212; /* Light text */
+    background-color: #c3f4f5; /* Dark background */
+    color: #7620ff; /* Light text */
     padding: 4rem 2rem 1rem;
 
     font-family: inherit;
@@ -1428,7 +1428,7 @@ footer p {
 .footer-logo {
     font-size: 1.5rem;
     font-weight: 700;
-
+  
     margin-bottom: 1rem;
 }
 
@@ -1442,7 +1442,7 @@ footer p {
 
 .footer-col h4 {
     font-size: 1.1rem;
-
+   
     margin-bottom: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -1480,7 +1480,7 @@ footer p {
 }
 
 .social-links a {
-  color: rgb(152, 90, 252);
+    color: #7620ff; 
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
