@@ -72,15 +72,17 @@ body {
 /* Logo Styling */
 .logo-box {
 
-
+  display: flex;
+  align-items: end;
+  justify-content: center;
   width:200px;
-  height: 90px;
+  height: 100px;
   margin-left: 0px;
 
 }
 .logo-box img{
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
 }
 
 .logo-text {
@@ -1408,7 +1410,7 @@ footer p {
    ==================== */
 .site-footer {
     background-color: #c3f4f5; /* Dark background */
-    color: #7620ff; /* Light text */
+    color: rgb(50, 69, 155); /* Light text */
     padding: 4rem 2rem 1rem;
 
     font-family: inherit;
@@ -1480,7 +1482,7 @@ footer p {
 }
 
 .social-links a {
-    color: #7620ff; 
+   color: rgb(50, 69, 155); /*
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
